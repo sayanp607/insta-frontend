@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import persistStore from "redux-persist/es/persistStore";
- export const API_BASE_URL = "http://localhost:8000";
+ export const API_BASE_URL = "https://insta-backend-uo4t.onrender.com";
 let persistor = persistStore(store);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
