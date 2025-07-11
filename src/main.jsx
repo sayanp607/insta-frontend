@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import persistStore from "redux-persist/es/persistStore";
+ export const API_BASE_URL = "http://localhost:8000";
 let persistor = persistStore(store);
 createRoot(document.getElementById("root")).render(
   <StrictMode>

@@ -21,6 +21,7 @@ import { clearLikeNotifications } from "@/redux/rtnSlice";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Button } from "./ui/button";
+import { API_BASE_URL } from "@/main";
 const LeftSIdebar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const LeftSIdebar = () => {
   );
   const logoutHandler = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/v1/user/logout", {
+      const res = await axios.get(`${API_BASE_URL}/api/v1/user/logout`, {
         withCredentials: true,
       });
       if (res.data.success) {

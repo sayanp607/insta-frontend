@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "@/main";
 import { setMessages } from "@/redux/chatSlice";
 import axios from "axios";
 import { useEffect } from "react";
@@ -11,7 +12,7 @@ const useGetAllMessage = () => {
     const fetchAllMessage = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8000/api/v1/message/all/${selectedUser?._id}`,
+          `${API_BASE_URL}/api/v1/message/all/${selectedUser?._id}`,
           {
             withCredentials: true,
           }

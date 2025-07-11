@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthUser } from "@/redux/authSlice";
+import { API_BASE_URL } from "@/main";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -27,7 +28,7 @@ const Login = () => {
     console.log(input);
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/v1/user/login",
+        `${API_BASE_URL}/api/v1/user/login`,
         input,
         {
           headers: {

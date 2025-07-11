@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { Link, useNavigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import { useSelector } from "react-redux";
+import { API_BASE_URL } from "@/main";
 const Signup = () => {
   const [input, setInput] = useState({
     username: "",
@@ -25,7 +26,7 @@ const Signup = () => {
     console.log(input);
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/v1/user/register",
+        `${API_BASE_URL}/api/v1/user/register`,
         input,
         {
           headers: {

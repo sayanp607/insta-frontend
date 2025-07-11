@@ -8,6 +8,7 @@ import Messages from "./Messages";
 import { setMessages } from "@/redux/chatSlice";
 import axios from "axios";
 import { FaVideo } from "react-icons/fa";
+import { API_BASE_URL } from "@/main";
 const ChatPage = () => {
   const { user, suggestedUsers, selectedUser } = useSelector(
     (store) => store.auth
@@ -20,7 +21,7 @@ const ChatPage = () => {
   const sendmsgHandler = async (receiverId) => {
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/v1/message/send/${receiverId}`,
+        `${API_BASE_URL}/api/v1/message/send/${receiverId}`,
         { textMessage },
         {
           headers: {

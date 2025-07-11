@@ -15,6 +15,7 @@ import { setSocket } from "./redux/socketSlice";
 import { setOnlineUsers } from "./redux/chatSlice";
 import { setLikeNotification } from "./redux/rtnSlice";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import { API_BASE_URL } from "./main";
 const browserRouter = createBrowserRouter([
   {
     path: "/",
@@ -75,7 +76,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     if (user) {
-      const socketio = io("http://localhost:8000", {
+      const socketio = io(`${API_BASE_URL}`, {
         query: {
           userId: user?._id,
         },
