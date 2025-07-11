@@ -22,7 +22,7 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Button } from "./ui/button";
 import { API_BASE_URL } from "@/main";
-const LeftSIdebar = () => {
+const LeftSidebar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
@@ -150,4 +150,4 @@ const LeftSIdebar = () => {
   );
 };
 
-export default LeftSIdebar;
+export default LeftSidebar;
